@@ -1,23 +1,43 @@
 const getState = ({ getStore, getActions, setStore }) => {
+	const base_url = "https://www.swapi.tech/api";
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			planets: [],
+			vehicles: [],
+			people: [],
+			favorites: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+
+			initApp: () => {
+				// if (localStorage.getItem("planets") !== null) return;
+
+				Promise.all([
+					fetch(`${ base_url }/people`),
+					fetch(`${ base_url }/planets`),
+					fetch(`${ base_url }/starships`)
+				]).then(responses => {
+					return Promise.all(responses.map(res => res.json()));
+				}).then(data => {
+					data[ 0 ].results.map(item => {
+						item.image = `https://starwars-visualguide.com/assets/img/characters/${ item.uid }.jpg`;
+					});
+					data[ 1 ].results.map(item => {
+						item.image = `https://starwars-visualguide.com/assets/img/planets/${ item.uid }.jpg`;
+					});
+					data[ 0 ].results.map(item => {
+						item.image = `https://starwars-visualguide.com/assets/img/starships/${ item.uid }.jpg`;
+					});
+
+					setStore({ people: data[ 0 ].results });
+					setStore({ planets: data[ 1 ].results });
+					setStore({ vehicles: data[ 2 ].results });
+
+					localStorage.setItem('people', JSON.stringify(data.results));
+					localStorage.setItem('planets', JSON.stringify(data.results));
+					localStorage.setItem('vehicles', JSON.stringify(data.results));
+
+				});
 			},
 			loadSomeData: () => {
 				/**
