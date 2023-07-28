@@ -1,15 +1,26 @@
-import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, { useContext, useEffect, useState } from "react";
 import "../../styles/home.css";
+import { Context } from "../store/appContext";
+import { CardGrid } from "../component/CardGrid.jsx";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	const { store, actions } = useContext(Context);
+	useEffect(() => {
+
+		console.log(store);
+	}, [ store ]);
+	const handleClick = () => {
+
+		console.log(store);
+	};
+	return (
+		<>
+			<div className="text-center mt-5">
+				<h1>Hello mars</h1>
+				<div className="d-grid gap-2">
+					<button onClick={ handleClick } type="button" name="" id="" className="btn btn-primary">Button</button>
+				</div>
+			</div>
+		</>
+	);
+};
