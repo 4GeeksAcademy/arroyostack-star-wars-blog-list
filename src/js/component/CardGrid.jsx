@@ -14,7 +14,7 @@ export const CardGrid = ({ endpoint }) => {
 
 
     return (
-        <ul>
+        <ul className="d-flex flex-wrap">
             { topic !== null && topic.map(item => {
                 return (
 
