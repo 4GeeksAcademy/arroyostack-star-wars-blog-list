@@ -18,7 +18,7 @@ export const SingleCard = ({ item }) => {
             <div className="card-body">
                 <h5 className="card-title text-warning">{ item.name }</h5>
             </div>
-            <div className="card-body">
+            <div>
                 <ActionsBar item={ item } />
             </div>
         </div>
