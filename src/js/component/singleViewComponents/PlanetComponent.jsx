@@ -3,31 +3,9 @@ import React from 'react';
 const avatar = 'https://placehold.co/600x400/EEE/31343C';
 
 export const PlanetComponent = ({ properties, image }) => {
-    //     climate: "temperate"
-    // ​
-    // created: "2023-07-28T09:51:58.741Z"
-    // ​
-    // diameter: "12500"
-    // ​
-    // edited: "2023-07-28T09:51:58.741Z"
-    // ​
-    // gravity: "1 standard"
-    // ​
-    // name: "Alderaan"
-    // ​
-    // orbital_period: "364"
-    // ​
-    // population: "2000000000"
-    // ​
-    // rotation_period: "24"
-    // ​
-    // surface_water: "40"
-    // ​
-    // terrain: "grasslands, mountains"
-    // ​
-    // url: "https://www.swapi.tech/api/planets/2"
+
     return (
-        <section className="vh-100 mt-0" style={ { backgroundColor: "#f4f5f7" } }>
+        <section className="vh-100 mt-0">
             <div className="row d-flex justify-content-center align-items-center h-100">
                 <div className="col col-lg-6 mb-4 mb-lg-0">
                     <div className="card" style={ { borderRadius: ".5rem" } }>

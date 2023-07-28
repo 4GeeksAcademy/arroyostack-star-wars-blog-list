@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
+import { Home } from "./views/Home.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/Navbar.jsx";
@@ -20,7 +20,7 @@ const Layout = () => {
 	const basename = process.env.BASENAME || "";
 
 	return (
-		<div>
+		<div className="bg-dark">
 			<BrowserRouter basename={ basename }>
 				<ScrollToTop>
 					<Navbar />
