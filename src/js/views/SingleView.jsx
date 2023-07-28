@@ -1,7 +1,85 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+const avatar = 'https://placehold.co/600x400/EEE/31343C';
 
 export const SingleView = () => {
+
+    const location = useLocation();
+    const [ properties, setProperties ] = useState('');
+    const [ image, setImage ] = useState('');
+
+    const getPageElement = async () => {
+        const res = await fetch(location.state.url);
+        const data = await res.json();
+
+        setProperties(data.result.properties);
+        setImage(location.state.image);
+    };
+
+    useEffect(() => {
+        getPageElement();
+    }, []);
+
+
     return (
-        <div>SingleView</div>
+        <section className="vh-100 mt-0" style={ { backgroundColor: "#f4f5f7" } }>
+            <div className="row d-flex justify-content-center align-items-center h-100">
+                <div className="col col-lg-6 mb-4 mb-lg-0">
+                    <div className="card" style={ { borderRadius: ".5rem" } }>
+                        <div className="row g-0">
+                            <div className="col-md-4 gradient-custom text-center text-white"
+                                style={ { borderTopLeftRadius: ".5rem", borderBottomLeftRadius: ".5rem" } }>
+                                <img src={ image || avatar }
+                                    alt="Avatar" className="my-5  rounded" style={ { width: "10rem" } } />
+                                <h5>hello</h5>
+
+                            </div>
+                            <div className="col-md-8">
+                                <div className="card-body p-4">
+                                    <h6>Information</h6>
+                                    <hr className="mt-0 mb-4" />
+                                    <div className="row pt-1">
+                                        <div className="col-6 mb-3">
+                                            <h6>Name</h6>
+                                            <p className="text-muted">{ properties.name }</p>
+                                        </div>
+                                        <div className="col-6 mb-3">
+                                            <h6>Eye Color</h6>
+                                            <p className="text-muted">{ properties[ 'eye_color' ] }</p>
+                                        </div>
+                                        <div className="col-6 mb-3">
+                                            <h6>Born</h6>
+                                            <p className="text-muted">{ properties[ 'birth_year' ] }</p>
+                                        </div>
+
+                                        <div className="col-6 mb-3">
+                                            <h6>Hair Color</h6>
+                                            <p className="text-muted">{ properties[ 'hair_color' ] }</p>
+                                        </div>
+                                        <div className="col-6 mb-3">
+                                            <h6>Liked Contact</h6>
+                                            <p className="text-muted">Yes/no</p>
+                                        </div>
+                                        <div className="col-6 mb-3">
+                                            <h6>Liked Contact</h6>
+                                            <p className="text-muted">Yes/no</p>
+                                        </div>
+                                        <hr />
+
+
+                                    </div>
+                                    <div className="d-flex justify-content-start">
+                                        <a href="#"><i className="fab fa-facebook-f fa-lg me-3"></i></a>
+                                        <a href="#!"><i className="fab fa-twitter fa-lg me-3"></i></a>
+                                        <a href="#!"><i className="fab fa-instagram fa-lg"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     );
 };

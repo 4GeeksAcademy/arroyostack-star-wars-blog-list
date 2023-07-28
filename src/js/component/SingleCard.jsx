@@ -12,7 +12,7 @@ export const SingleCard = ({ item }) => {
                     ({ currentTarget }) => {
                         currentTarget.src = "https://placehold.co/600x400/EEE/31343C";
                     } }
-                style={ { width: "18rem" } }
+                style={ { width: "18rem", minHeight: "18rem" } }
                 className="card-img-top"
                 alt={ item.name } />
             <div className="card-body">
