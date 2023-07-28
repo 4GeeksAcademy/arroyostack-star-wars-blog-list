@@ -4,7 +4,7 @@ const avatar = 'https://placehold.co/600x400/EEE/31343C';
 
 export const ShipComponent = ({ properties, image }) => {
     return (
-        <section className="vh-100 mt-0" style={ { backgroundColor: "#f4f5f7" } }>
+        <section className="vh-100 mt-0">
             <div className="row d-flex justify-content-center align-items-center h-100">
                 <div className="col col-lg-6 mb-4 mb-lg-0">
                     <div className="card" style={ { borderRadius: ".5rem" } }>

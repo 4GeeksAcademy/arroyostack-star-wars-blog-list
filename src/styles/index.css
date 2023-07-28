@@ -1,14 +1,24 @@
-/* 
-    General Styles
-*/
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Poiret+One&display=swap');
+
 body {
     background: black;
     margin: 0;
 }
 
-/* #layout {
-    margin: 0;
-} */
+h1 {
+    font-family: 'Monoton', cursive;
+    color: #CDA114;
+    font-size: 70px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poiret One', cursive;
+    color: #CDA114;
+}
 
 a {
     text-decoration: none;
@@ -35,7 +45,8 @@ a {
 
 .vehicle-background,
 .people-background,
-.planet-background {
+.planet-background,
+.single-view {
     background: url('https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png');
     background-size: cover;
     background-repeat: no-repeat;

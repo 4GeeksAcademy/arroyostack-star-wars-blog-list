@@ -3,9 +3,10 @@ import React from 'react';
 const avatar = 'https://placehold.co/600x400/EEE/31343C';
 
 export const PeopleComponent = ({ properties, image }) => {
+    console.log(properties);
     return (
-        <section className="vh-100 mt-0" style={ { backgroundColor: "#f4f5f7" } }>
-            <div className="row d-flex justify-content-center align-items-center h-100">
+        <section className="vh-100 mt-0 bg-dark" >
+            <div className="row d-flex justify-content-center align-items-center h-100 ">
                 <div className="col col-lg-6 mb-4 mb-lg-0">
                     <div className="card" style={ { borderRadius: ".5rem" } }>
                         <div className="row g-0">
@@ -13,8 +14,6 @@ export const PeopleComponent = ({ properties, image }) => {
                                 style={ { borderTopLeftRadius: ".5rem", borderBottomLeftRadius: ".5rem" } }>
                                 <img src={ image || avatar }
                                     alt="Avatar" className="my-5  rounded" style={ { width: "10rem" } } />
-                                <h5>hello</h5>
-
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body p-4">
@@ -39,14 +38,13 @@ export const PeopleComponent = ({ properties, image }) => {
                                             <p className="text-muted">{ properties[ 'hair_color' ] }</p>
                                         </div>
                                         <div className="col-6 mb-3">
-                                            <h6>Liked Contact</h6>
-                                            <p className="text-muted">Yes/no</p>
+                                            <h6>Height</h6>
+                                            <p className="text-muted">{ properties[ 'height' ] }</p>
                                         </div>
                                         <div className="col-6 mb-3">
-                                            <h6>Liked Contact</h6>
-                                            <p className="text-muted">Yes/no</p>
+                                            <h6>Mass</h6>
+                                            <p className="text-muted">{ properties[ 'mass' ] }</p>
                                         </div>
-                                        <hr />
 
 
                                     </div>
