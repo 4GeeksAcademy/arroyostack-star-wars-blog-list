@@ -18,8 +18,8 @@ export const LikedView = () => {
     return (
         <>
             <div style={ { marginTop: '100px' } }>
-                <h2 className="mt-5 mb-5 text-center">Your Liked List</h2>
                 { likeRemoved && <Navigate replace to="/liked" /> }
+                <h2 className="mt-5 mb-5 text-center">Your Liked List</h2>
 
                 <form onSubmit={ handleSubmit }>
                     <ul>
