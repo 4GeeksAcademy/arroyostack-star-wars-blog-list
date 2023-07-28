@@ -1,21 +1,16 @@
-import React, { useContext, useState } from 'react';
-import { Context } from '../store/appContext';
+import React from 'react';
+
 import { CardGrid } from '../component/CardGrid.jsx';
 
 export const PeopleViews = () => {
-  const [ people, setpeople ] = useState(JSON.parse(localStorage.getItem('people')));
-  const { store, actions } = useContext(Context);
 
-  const handleLike = (_, id) => {
-    const data = people.filter(person => person.uid === id);
-    actions.addLike(...data);
-    console.log(...data);
-    console.log(store.likedElements);
-
-  };
   return (
-
-    <CardGrid endpoint="people" />
+    <>
+      <div style={ { marginTop: '100px' } }>
+        <h2 className="mt-5 mb-5 text-center">StarWars Characters</h2>
+        <CardGrid endpoint="people" />
+      </div>
+    </>
 
   );
 };

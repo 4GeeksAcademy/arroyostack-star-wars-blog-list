@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 export const ActionsBar = ({ item }) => {
     const { store, actions } = useContext(Context);
-    console.log(actions.addLike);
 
     const handleLike = () => {
+
+
         actions.addLike(item);
-        console.log(store);
+        console.log(store.likedElements);
     };
     return (
         <>

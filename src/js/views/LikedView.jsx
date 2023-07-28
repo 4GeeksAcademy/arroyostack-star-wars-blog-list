@@ -1,26 +1,33 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context } from '../store/appContext';
+import React, { useState } from 'react';
 import { CardGrid } from '../component/CardGrid.jsx';
+import { Navigate } from 'react-router-dom';
 
 export const LikedView = () => {
-    const { store, actions } = useContext(Context);
-    const [ liked, setLiked ] = useState(null);
-    const { likedElements } = store;
-    console.log(liked);
 
-    useEffect(() => {
+    const [ likeRemoved, setlikeRemoved ] = useState(false);
 
-        setLiked(JSON.parse(localStorage.getItem('likedElements')));
+    const handleSubmit = (e) => {
 
-    }, [ likedElements ]);
+        e.preventDefault();
+        setlikeRemoved(true);
+        setlikeRemoved(false);
+
+    };
 
 
     return (
         <>
-            <div>likedItems</div>
-            <ul>
-                <CardGrid endpoint="likedElements" />
-            </ul>
+            <div style={ { marginTop: '100px' } }>
+                <h2 className="mt-5 mb-5 text-center">Your Liked List</h2>
+                { likeRemoved && <Navigate replace to="/liked" /> }
+
+                <form onSubmit={ handleSubmit }>
+                    <ul>
+                        <CardGrid endpoint="likedElements" />
+                    </ul>
+                </form>
+            </div>
+
         </>
     );
 };

@@ -10,7 +10,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 
 			initialize: () => {
-				// if (localStorage.getItem("planets") !== null) return;
+				if (localStorage.getItem("planets") !== null) return;
 
 				Promise.all([
 					fetch(`${ base_url }/people`),
@@ -43,7 +43,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addLike: (likedObject) => {
 				const store = getStore();
 
-				if (store.likedElements.some(item => item.uid === likedObject.uid)) return;
+				if (store.likedElements.some(item => item.uid === likedObject.uid)) {
+
+					store.likedElements = store.likedElements.filter(element => element.uid !== likedObject.uid);
+					localStorage.setItem('likedElements', JSON.stringify(store.likedElements));
+
+					setStore(store);
+					return;
+				};
 
 				store.likedElements.push(likedObject);
 				localStorage.setItem('likedElements', JSON.stringify(store.likedElements));
