@@ -5,11 +5,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			vehicles: [],
 			people: [],
-			favorites: []
+			likedElements: []
 		},
 		actions: {
 
-			initApp: () => {
+			initialize: () => {
 				// if (localStorage.getItem("planets") !== null) return;
 
 				Promise.all([
@@ -25,19 +25,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 					data[ 1 ].results.map(item => {
 						item.image = `https://starwars-visualguide.com/assets/img/planets/${ item.uid }.jpg`;
 					});
-					data[ 0 ].results.map(item => {
+					data[ 2 ].results.map(item => {
 						item.image = `https://starwars-visualguide.com/assets/img/starships/${ item.uid }.jpg`;
 					});
+
 
 					setStore({ people: data[ 0 ].results });
 					setStore({ planets: data[ 1 ].results });
 					setStore({ vehicles: data[ 2 ].results });
 
-					localStorage.setItem('people', JSON.stringify(data.results));
-					localStorage.setItem('planets', JSON.stringify(data.results));
-					localStorage.setItem('vehicles', JSON.stringify(data.results));
+					localStorage.setItem('people', JSON.stringify(data[ 0 ].results));
+					localStorage.setItem('planets', JSON.stringify(data[ 1 ].results));
+					localStorage.setItem('vehicles', JSON.stringify(data[ 2 ].results));
 
 				});
+			},
+			addLike: (likedObject) => {
+				const store = getStore();
+
+				if (store.likedElements.some(item => item.uid === likedObject.uid)) return;
+
+				store.likedElements.push(likedObject);
+				localStorage.setItem('likedElements', JSON.stringify(store.likedElements));
+
+				setStore(store);
+
 			},
 			loadSomeData: () => {
 				/**
