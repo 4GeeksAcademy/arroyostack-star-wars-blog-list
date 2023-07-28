@@ -5,12 +5,13 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Navbar } from "./component/Navbar.jsx";
 import { Footer } from "./component/footer";
 import { PlanetsView } from "./views/PlanetsView.jsx";
 import { PeopleViews } from "./views/PeopleViews.jsx";
 import { VehicleView } from "./views/VehiclesView.jsx";
 import { LikedView } from "./views/LikedView.jsx";
+import { SingleView } from "./views/SingleView.jsx";
 
 
 
@@ -29,6 +30,7 @@ const Layout = () => {
 						<Route path="/people" element={ <PeopleViews /> } />
 						<Route path="/vehicle" element={ <VehicleView /> } />
 						<Route path="/liked" element={ <LikedView /> } />
+						<Route path="/single" element={ <SingleView /> } />
 						<Route path="*" element={ <h1>Not found!</h1> } />
 					</Routes>
 					<Footer />
