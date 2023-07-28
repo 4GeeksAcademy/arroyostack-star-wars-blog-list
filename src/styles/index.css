@@ -2,17 +2,41 @@
     General Styles
 */
 body {
-    background: #212529;
+    background: black;
+    margin: 0;
 }
-a{
+
+/* #layout {
+    margin: 0;
+} */
+
+a {
     text-decoration: none;
     margin: 1rem;
 
 }
 
-#intro-view{
+#intro-view {
     background: url('https://gizmodo.com.au/wp-content/uploads/2021/11/19/31db174e9d803aed420a967f5014bdc1.gif?quality=75');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+}
+
+.card-opacity {
+    background: rgba(26, 122, 255, 0.295);
+    /* background: rgba(255, 255, 255, 0.29); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+.vehicle-background,
+.people-background,
+.planet-background {
+    background: url('https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }

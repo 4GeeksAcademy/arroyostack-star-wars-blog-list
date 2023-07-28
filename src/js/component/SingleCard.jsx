@@ -5,7 +5,7 @@ const placeholder = 'https://placehold.co/600x400/EEE/31343C';
 
 export const SingleCard = ({ item }) => {
     return (
-        <div className="card m-2" style={ { width: "18rem" } }>
+        <div className="card-opacity card m-2" style={ { width: "18rem" } }>
             <img
                 src={ item.image }
                 onError={
@@ -16,7 +16,7 @@ export const SingleCard = ({ item }) => {
                 className="card-img-top"
                 alt={ item.name } />
             <div className="card-body">
-                <h5 className="card-title">{ item.name }</h5>
+                <h5 className="card-title text-warning">{ item.name }</h5>
             </div>
             <div className="card-body">
                 <ActionsBar item={ item } />
