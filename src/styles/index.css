@@ -1,9 +1,18 @@
 /* 
     General Styles
 */
+body {
+    background: #212529;
+}
 a{
     text-decoration: none;
     margin: 1rem;
-    color: white;
 
+}
+
+#intro-view{
+    background: url('https://gizmodo.com.au/wp-content/uploads/2021/11/19/31db174e9d803aed420a967f5014bdc1.gif?quality=75');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }

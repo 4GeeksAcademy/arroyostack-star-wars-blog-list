@@ -9,13 +9,17 @@ export const CardGrid = ({ endpoint }) => {
     useEffect(() => {
 
         setTopic(JSON.parse(localStorage.getItem(endpoint)));
+
     }, []);
+
+    useEffect(() => {
+        setTopic(JSON.parse(localStorage.getItem(endpoint)));
+    }, [ store.likedElements ]);
 
 
 
     return (
         <>
-            <h1 className="m-5 text-start p-2" >{ endpoint.toUpperCase() }</h1>
             <ul className="d-flex flex-wrap justify-content-around">
 
                 { topic !== null && topic.map(item => {
@@ -24,7 +28,6 @@ export const CardGrid = ({ endpoint }) => {
                         <div key={ item.uid } >
                             <SingleCard item={ item } />
                         </div>
-
 
                     );
                 }) }

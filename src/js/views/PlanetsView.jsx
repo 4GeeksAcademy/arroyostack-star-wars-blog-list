@@ -1,24 +1,15 @@
-import React, { useContext, useState } from 'react';
-import { Context } from '../store/appContext';
+import React from 'react';
 import { CardGrid } from '../component/CardGrid.jsx';
 
 export const PlanetsView = () => {
-  const [ planets, setFavorites ] = useState(JSON.parse(localStorage.getItem('planets')));
-  const { store, actions } = useContext(Context);
-  // console.log(planets);
-
-  const handleLike = (_, id) => {
-    const data = planets.filter(planet => planet.uid === id);
-    actions.addLike(...data);
-    console.log(...data);
-    console.log(store.likedElements);
-
-  };
-
 
   return (
-
-    <CardGrid endpoint="planets" />
+    <>
+      <div style={ { marginTop: '100px' } } className='bg-dark'>
+        <h2 className="mt-5 mb-5 text-center">StarWars Planets</h2>
+        <CardGrid endpoint="planets" />
+      </div>
+    </>
 
   );
 };
