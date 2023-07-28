@@ -22,6 +22,15 @@ a {
     color: #CDA114;
 }
 
+.home-title {
+    font-size: 100px;
+    margin-top: 10rem;
+}
+
+.home-subtitle {
+    font-size: 60px;
+}
+
 a {
     text-decoration: none;
     margin: 1rem;
@@ -52,4 +61,5 @@ a {
     background: url('https://i.pinimg.com/originals/d7/a6/11/d7a61190a836bdcfc62bf97af4f4c74b.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }

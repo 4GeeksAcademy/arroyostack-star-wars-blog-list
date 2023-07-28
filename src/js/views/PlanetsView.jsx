@@ -6,7 +6,7 @@ export const PlanetsView = () => {
   return (
     <>
       <div className="planet-background bg-dark" style={ { marginTop: '100px' } } >
-        <h2 className="mt-5 mb-5 text-center">StarWars Planets</h2>
+        <h2 className="home-subtitle mt-5 mb-5 text-center">StarWars Planets</h2>
         <CardGrid endpoint="planets" />
       </div>
     </>
