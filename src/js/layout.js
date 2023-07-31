@@ -6,7 +6,7 @@ import { Home } from "./views/Home.jsx";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/Navbar.jsx";
-import { Footer } from "./component/footer";
+import { Footer } from "./component/Footer.jsx";
 import { PlanetsView } from "./views/PlanetsView.jsx";
 import { PeopleViews } from "./views/PeopleViews.jsx";
 import { VehicleView } from "./views/VehiclesView.jsx";
